@@ -24,4 +24,20 @@ services:
     volumes:
       - ./app:/app
   # mysql
+  db:
+    image: mysql:8.0
+    container_name: db
+    restart: unless-stopped
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./mysqldata:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: mysql_docker_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
   # redis
+
+volumes:
+  mysqldata:
