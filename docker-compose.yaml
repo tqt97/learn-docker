@@ -1,0 +1,15 @@
+services:
+  
+  # PHP Service
+  web:
+    image: nginx:latest # Image to use
+    container_name: web # Container name
+    # restart: unless-stopped # Restart policy
+    # tty: true # Interactive terminal for the container to run in the background and forward ports to host
+    ports:
+      # Host port to container port mapping (8001:80) 
+      # 8001 port on host is mapped to 80 port on container
+      - "8001:80" 
+    # volumes: # Mounting volumes
+    #   - ./:/var/www
+    #   - ./docker-compose.yaml:/var/www/docker-compose.yaml
