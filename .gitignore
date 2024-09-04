@@ -1,5 +1,6 @@
 /mysqldata
 /vendor
+/app/vendor
 /.fleet
 /.idea
 /.vscode

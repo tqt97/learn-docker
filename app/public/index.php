@@ -1,3 +1,21 @@
+<?php
+
+use App\Repository\TranslationRepository;
+
+require_once dirname(__DIR__) . '/vendor/autoload.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $translationRepository = new TranslationRepository();
+
+    $translation = $translationRepository->findForLanguage($_POST['language'], $_POST['phrase']) ?: 'Translation not found...';
+} else {
+
+    $languageRepository = new \App\Repository\LanguageRepository();
+    $languages = $languageRepository->findAll();
+}
+
+?>
 <!doctype html>
 <html lang="en">
 
