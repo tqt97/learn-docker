@@ -12,4 +12,11 @@ services:
       - "8001:80" 
     # volumes: # Mounting volumes
     #   - ./:/var/www
-    #   - ./docker-compose.yaml:/var/www/docker-compose.yaml
+    #   - ./docker-compose.yaml:/var/www/docker-compose.yaml  
+  # php
+  app:
+    build: 
+      # context: .
+      dockerfile: ./php/Dockerfile
+  # mysql
+  # redis
