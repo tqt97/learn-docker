@@ -2,10 +2,7 @@ services:
   
   # nginx service
   web:
-    # image: nginx:latest # Image to use
-    build: 
-      # context: .
-      dockerfile: ./nginx/Dockerfile
+    image: nginx:latest # Image to use
     container_name: web # Container name
     volumes: 
       - ./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf # Mounting volumes
@@ -24,6 +21,8 @@ services:
       # context: .
       dockerfile: ./php/Dockerfile
     container_name: app
+    volumes:
+      - ./app:/var/www/html
   # mysql
   db:
     image: mysql:8.0
