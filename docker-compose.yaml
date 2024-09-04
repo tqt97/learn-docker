@@ -1,6 +1,6 @@
 services:
   
-  # PHP Service
+  # nginx service
   web:
     image: nginx:latest # Image to use
     container_name: web # Container name
